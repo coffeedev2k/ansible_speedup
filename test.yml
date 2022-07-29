@@ -1,0 +1,16 @@
+---
+- hosts: all
+  # gather_facts: no
+  tasks:
+    - name: Create directory
+      file:
+        path: /tmp/ansible_speed
+        state: directory
+    - name: Create file
+      copy:
+        content: SPEED
+        dest: /tmp/ansible_speed/speed
+    - name: Remove directory
+      file:
+        path: /tmp/ansible_speed
+        state: absent
